@@ -8,10 +8,12 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.mockito.Mock;
+
 import org.mockito.Mockito;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
+import com.eglobal.capacitacion.mock.controler.ControllerImpl;
 import com.eglobal.capacitacion.mock.service.ServiceImpl;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
