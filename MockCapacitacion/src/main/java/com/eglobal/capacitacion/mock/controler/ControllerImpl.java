@@ -15,19 +15,14 @@ import com.eglobal.capacitacion.mock.service.impl.ServiceLibroImpl;
 @RestController
 public class ControllerImpl {
 
-	
+	@Autowired
 	ServiceImpl service_impl;
 	
-	@Autowired
-	public ControllerImpl(ServiceImpl service_impl) {
-		this.service_impl=service_impl;
-	}
-
 	@Autowired
 	ServiceLibro serv_libro;
 	
 	@GetMapping("/saludo")
-	public ResponseEntity<String>get_saludo(){
+	public ResponseEntity<?>get_saludo(){
 		return ResponseEntity.ok(service_impl.hola_mundo());
 	}
 	

@@ -8,11 +8,12 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.TestMethodOrder;
-
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
+import static org.mockito.Mockito.*;
 import com.eglobal.capacitacion.mock.controler.ControllerImpl;
 import com.eglobal.capacitacion.mock.service.ServiceImpl;
 
@@ -20,13 +21,15 @@ import com.eglobal.capacitacion.mock.service.ServiceImpl;
 @SpringBootTest
 public class SaludoTest {
 
-	private ControllerImpl controller;
-    private ServiceImpl greetingService;
+	@InjectMocks
+	private ControllerImpl controller= new ControllerImpl();
+    
+	@Mock
+	private ServiceImpl greetingService;
 
     @Before
     public void setUp() {
-        greetingService = Mockito.mock(ServiceImpl.class);
-        controller = new ControllerImpl(greetingService);
+    	when(greetingService.hola_mundo()).thenReturn("HolaMundo");
     }
     
 
@@ -34,8 +37,8 @@ public class SaludoTest {
     @Order(value = 1)
     @DisplayName("debug: comparando resultado y estatus")
     public void itShouldReturnTheServiceValueWith200StatusCode() {
-        Mockito.when(greetingService.hola_mundo()).thenReturn("HolaMundo");
-        ResponseEntity<String> httpResponse =  controller.get_saludo();
+        
+        ResponseEntity<?> httpResponse =  controller.get_saludo();
 
         Assert.assertEquals(httpResponse.getStatusCode(), HttpStatus.OK);
         Assert.assertEquals("HolaMundo", httpResponse.getBody());
