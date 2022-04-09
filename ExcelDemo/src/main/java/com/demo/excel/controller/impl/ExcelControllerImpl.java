@@ -34,9 +34,11 @@ public class ExcelControllerImpl implements ExcelController{
 		
 		return ResponseEntity.ok("success");
 	}
-	
 
-	
-	
+	@Override
+	public void test() {
+		// TODO Auto-generated method stub
+		
+	}	
 
 }
