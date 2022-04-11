@@ -1,0 +1,2 @@
+permitir de forma sencilla generar una instancia alternativa
+con comportamiento predecible que se pueda utilizar dentro de las pruebas unitarias
