@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    .container{
+        background: #e0e0e0;
+        margin-left: 25%;
+        margin-top: 5rem;
+        height: 10rem;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Open Sans", sans-serif;
+    }
+
+    .f-inpt{
+            
+            font-size: 18px;
+            /*width: 100px;*/
+            color: #ffffff;
+            background-color: #148f77;
+            border-radius: 2px;
+            border: 1px solid #148f77;
+    }
+</style>
+<body>
+    <div class="container">
+        <form action="http://localhost:3000/prueba" method="get">
+            <h3>Registro Excel</h3>
+            <h3>Subir archivo</h3>
+            <input type="file" name="" style="background-color: #148f77;">
+            <input type="submit" style="display: block; width: 100%; margin-top: 10px;" value="Enviar" class="f-inpt">
+        </form>
+    </div>
+</body>
+</html>
