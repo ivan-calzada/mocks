@@ -7,35 +7,83 @@
     <title>Document</title>
 </head>
 <style>
-    
+    body{
+        background-color: #14548f;
+    }
     .container{
-        background: #e0e0e0;
+        background: rgba(255, 255, 255, 0.945);
         margin-left: 25%;
         margin-top: 5rem;
-        height: 10rem;
+        height: 20rem;
         width: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
         font-family: "Open Sans", sans-serif;
+        color: #ffffff;
+        border-radius: 10px;
     }
 
     .f-inpt{
             
             font-size: 18px;
             /*width: 100px;*/
-            color: #ffffff;
+            color: inherit;
             background-color: #148f77;
             border-radius: 2px;
             border: 1px solid #148f77;
     }
+    .file-select {
+  position: relative;
+  display: inline-block;
+}
+
+.file-select::before {
+  background-color: #3fa893;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  content: 'Seleccionar'; /* testo por defecto */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  
+}
+
+.file-select input[type="file"] {
+  opacity: 0;
+  width: 200px;
+  height: 32px;
+  display: inline-block;
+}
+
+#src-file1::before {
+  content: 'Seleccionar Archivo 1';
+}
+form{
+    border: solid rgba(0, 0, 0, 0.507) 1px;
+    padding: 1em;
+    border-radius: 1em;
+}
+h2{
+    color: #14548f;
+}
+h3{
+    border-bottom: solid rgba(0, 0, 0, 0.507) 1px;
+}
 </style>
 <body>
     <div class="container">
-        <form action="http://localhost:3000/prueba" method="get">
-            <h3>Registro Excel</h3>
-            <h3>Subir archivo</h3>
-            <input type="file" name="" style="background-color: #148f77;">
+        <form action="http://localhost:8080/excel" method="post" enctype="multipart/form-data">
+            <h2>Registro Excel</h2>
+            <div class="file-select" id="src-file1" >
+                <input type="file" name="file" aria-label="Archivo">
+              </div>
             <input type="submit" style="display: block; width: 100%; margin-top: 10px;" value="Enviar" class="f-inpt">
         </form>
     </div>

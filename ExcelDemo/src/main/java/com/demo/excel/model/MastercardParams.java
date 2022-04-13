@@ -10,6 +10,20 @@ public class MastercardParams {
 	private String mcc;
 	private String merchantUrl;
 	
+	public MastercardParams() {
+	}
+	
+	public MastercardParams(String mastercardParams, String acquirerBin, String acquirerMerchantID, String merchantName,
+			String merchantCountryCode, String mcc, String merchantUrl) {
+		this.mastercardParams = mastercardParams;
+		this.acquirerBin = acquirerBin;
+		this.acquirerMerchantID = acquirerMerchantID;
+		this.merchantName = merchantName;
+		this.merchantCountryCode = merchantCountryCode;
+		this.mcc = mcc;
+		this.merchantUrl = merchantUrl;
+	}
+
 	public String getMastercardParams() {
 		return mastercardParams;
 	}
@@ -52,7 +66,12 @@ public class MastercardParams {
 	public void setMerchantUrl(String merchantUrl) {
 		this.merchantUrl = merchantUrl;
 	}
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "MastercardParams [acquirerBin=" + acquirerBin + ", acquirerMerchantID=" + acquirerMerchantID
+				+ ", mastercardParams=" + mastercardParams + ", mcc=" + mcc + ", merchantCountryCode="
+				+ merchantCountryCode + ", merchantName=" + merchantName + ", merchantUrl=" + merchantUrl + "]";
+	}
+			
 }
