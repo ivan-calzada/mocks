@@ -1,0 +1,15 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ivan-calzada/mocks/tree/cicb_16042022/Spring-learn/ms-application-properties
+          username: 
+          password: 
+          default-label: cicb_16042022
+          search-paths: 
+          - api-disquera
