@@ -1,3 +1,15 @@
 spring:
   application:
     name: api-disquera
+  datasource:
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+    url: jdbc:postgresql://localhost:5432/Demo  
+    username: carlos_ms 
+    password: carlosroot
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8088
