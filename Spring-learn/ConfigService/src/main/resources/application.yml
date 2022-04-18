@@ -7,9 +7,9 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/ivan-calzada/mocks/tree/cicb_16042022/Spring-learn/ms-application-properties
+          uri: https://github.com/ivan-calzada/ms-application-properties
           username: 
           password: 
-          default-label: cicb_16042022
+          default-label: cicb_17042022
           search-paths: 
           - api-disquera
